@@ -22,8 +22,9 @@ async def main():
     while True:
         await send_message_async()
         schedule.run_pending()
-        # time.sleep(1)
+        time.sleep(1800)
 
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
