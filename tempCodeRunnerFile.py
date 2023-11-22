@@ -3,7 +3,6 @@ import schedule
 import time
 import datetime
 import pytz
-import asyncio
 
 token = "6801716374:AAHf9y6oCdGKPLRvXG3vHvNNgVSIoZxhPWA"
 public_chat_name = "@OS_kgu"
@@ -17,14 +16,14 @@ def job():
     if now.hour >= 23 or now.hour <= 6:
         return
 
-# Schedule the job to run every 30 minutes
+# Schedule the job to run every 30 minute
 schedule.every(30).minutes.do(job)
-
 async def main():
     while True:
         await send_message_async()
         schedule.run_pending()
-        await asyncio.sleep(1)
+        # time.sleep(1)
 
 if __name__ == "__main__":
+    import asyncio
     asyncio.run(main())
